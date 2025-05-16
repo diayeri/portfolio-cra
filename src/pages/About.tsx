@@ -71,11 +71,8 @@ const About: React.FC = () => {
         <div className="md:flex gap-8 items-center">
           <div className="md:w-1/3 mb-6 md:mb-0">
             <div className="w-48 h-48 mx-auto rounded-full overflow-hidden bg-gray-200 dark:bg-gray-700">
-              <img 
-                src="" 
-                alt="Profile avatar" 
-                className="w-full h-full object-cover"
-              />
+              {/* 임시로 이미지를 표시하지 않고 배경색만 보여줍니다 */}
+              <div className="w-full h-full bg-gray-200 dark:bg-gray-700"></div>
             </div>
           </div>
           
