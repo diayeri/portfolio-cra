@@ -77,7 +77,7 @@ const About: React.FC = () => {
           </div>
           
           <div className="md:w-2/3">
-            <h2 className="text-2xl font-bold mb-2">John Doe</h2>
+            <h2 className="text-2xl font-bold mb-2">정다영</h2>
             <p className="text-primary-light dark:text-primary-dark font-medium mb-4">Frontend Developer</p>
             
             <p className="text-gray-600 dark:text-gray-300 mb-4">
