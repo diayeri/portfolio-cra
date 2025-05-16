@@ -8,7 +8,9 @@ export const initializeGoogleAnalytics = (): void => {
   const gaId = getGoogleAnalyticsId();
   
   if (!gaId || !isProduction()) {
-    console.log('Google Analytics가 초기화되지 않았습니다. (개발 환경 또는 ID 없음)');
+    // GA ID가 없거나 개발 환경일 경우 초기화를 건너뜁니다.
+    // console.log 메시지는 주석 처리하여 콘솔에 표시되지 않도록 합니다.
+    // console.log('Google Analytics가 초기화되지 않았습니다. (개발 환경 또는 ID 없음)');
     return;
   }
   
@@ -27,7 +29,7 @@ export const initializeGoogleAnalytics = (): void => {
     
     // Google Analytics 초기화
     gtagWindow.gtag('config', gaId);
-    console.log('Google Analytics가 초기화되었습니다.');
+    // console.log('Google Analytics가 초기화되었습니다.');
   } catch (error) {
     console.error('Google Analytics 초기화 오류:', error);
   }

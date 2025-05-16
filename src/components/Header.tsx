@@ -16,12 +16,12 @@ const Header: React.FC<HeaderProps> = ({ className = '' }) => {
   // 활성 링크 스타일 함수
   const getNavLinkClass = ({ isActive }: { isActive: boolean }) => {
     return isActive
-      ? "text-primary-light dark:text-primary-dark font-medium"
-      : "text-gray-600 dark:text-gray-300 hover:text-primary-light dark:hover:text-primary-dark transition-colors";
+      ? "font-medium underline"
+      : "hover:underline transition-colors";
   };
   
   return (
-    <header className={`p-4 md:p-6 flex flex-wrap justify-between items-center border-b border-gray-200 dark:border-gray-700 ${className}`}>
+    <header className={`p-4 md:p-6 flex flex-wrap justify-between items-center border-b ${className}`}>
       <div className="flex items-center">
         <NavLink to="/" className="text-xl md:text-2xl font-bold">My Portfolio</NavLink>
       </div>

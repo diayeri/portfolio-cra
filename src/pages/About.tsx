@@ -72,7 +72,7 @@ const About: React.FC = () => {
           <div className="md:w-1/3 mb-6 md:mb-0">
             <div className="w-48 h-48 mx-auto rounded-full overflow-hidden bg-gray-200 dark:bg-gray-700">
               <img 
-                src="https://via.placeholder.com/300x300?text=Profile" 
+                src="" 
                 alt="Profile avatar" 
                 className="w-full h-full object-cover"
               />

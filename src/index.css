@@ -2,8 +2,18 @@
 @tailwind components;
 @tailwind utilities;
 
-body {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    @apply bg-background-light dark:bg-background-dark;
+    @apply text-text-light dark:text-text-dark;
+    @apply transition-colors duration-300;
+  }
 }
