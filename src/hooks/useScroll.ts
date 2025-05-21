@@ -47,7 +47,7 @@ export const useActiveSection = (sectionIds: string[], offset = 100): string | n
  * 요소가 화면에 나타났는지 감지하는 커스텀 훅
  * @param threshold - 화면에 나타난 것으로 간주할 요소의 비율 (0.0 - 1.0)
  */
-export const useIntersectionObserver = (threshold = 0.2): [boolean, React.RefObject<HTMLDivElement>] => {
+export const useIntersectionObserver = (threshold = 0.2): [boolean, React.RefObject<HTMLDivElement | null>] => {
   const [isVisible, setIsVisible] = useState(false);
   const ref = useRef<HTMLDivElement>(null);
   

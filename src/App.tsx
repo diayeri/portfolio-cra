@@ -1,5 +1,5 @@
 import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom'
-import { useEffect, lazy, Suspense } from 'react'
+import React, { useEffect, lazy, Suspense } from 'react'
 import './App.css'
 import DefaultLayout from './layouts/DefaultLayout'
 import Home from './pages/Home'
@@ -49,6 +49,10 @@ const AppRoutes = () => {
           <Route path="/" element={<DefaultLayout />}>
             <Route index element={<Home />} />
             <Route path="projects">
+              <Route index element={<React.Suspense fallback={<LoadingFallback />}>
+                {/* Projects 컴포넌트를 동적으로 불러오기 */}
+                {React.createElement(React.lazy(() => import('./pages/Projects')))}
+              </React.Suspense>} />
               <Route 
                 path=":id" 
                 element={
