@@ -15,8 +15,11 @@ export interface ProjectData {
   /** 사용된 기술 스택 */
   tech: string[];
   
-  /** 프로젝트 이미지 URL */
-  image: string;
+  /** 프로젝트 이미지 URL (레거시 호환, images가 있으면 무시) */
+  image?: string;
+
+  /** 프로젝트 이미지 URL 배열 (여러 이미지 지원) */
+  images?: string[];
   
   /** 프로젝트 상세 페이지 링크 */
   link: string;

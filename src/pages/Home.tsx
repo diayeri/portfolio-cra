@@ -11,7 +11,7 @@ const Home = () => {
       </div>
       <h1 className="text-3xl md:text-5xl font-bold mb-8 text-primary-light dark:text-primary-dark drop-shadow-lg">Welcome!</h1>
       <button
-        className="px-8 py-3 rounded-full bg-primary-light dark:bg-primary-dark text-white font-semibold text-lg shadow-lg hover:scale-105 hover:bg-primary-dark dark:hover:bg-primary-light hover:text-primary-dark dark:hover:text-primary-light transition-all duration-200"
+        className="px-8 py-3 rounded-full bg-primary-light dark:bg-primary-dark text-white font-semibold text-lg shadow-lg hover:scale-105 hover:bg-primary-dark hover:text-white dark:hover:bg-primary-light dark:hover:text-primary-dark transition-all duration-200"
         onClick={() => navigate('/projects')}
       >
         프로젝트 보러가기

@@ -23,12 +23,21 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, className = '' }) =>
     >
       {/* 프로젝트 이미지 */}
       <div className="relative h-48 overflow-hidden">
-        <img 
-          src={project.image} 
-          alt={project.title}
-          className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-          loading="lazy"
-        />
+        {Array.isArray(project.images) && project.images.length > 0 ? (
+          <img
+            src={project.images[0]}
+            alt={project.title}
+            className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+            loading="lazy"
+          />
+        ) : (
+          <img
+            src={project.image}
+            alt={project.title}
+            className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+            loading="lazy"
+          />
+        )}
         <div className="absolute inset-0 bg-black bg-opacity-40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
           <span className="text-white font-medium px-4 py-2 bg-primary-light dark:bg-primary-dark rounded-lg transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
             View Details

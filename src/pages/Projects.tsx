@@ -11,7 +11,10 @@ const projectsData: ProjectData[] = [
 		description:
 			'A personal portfolio website built with React, TypeScript and Tailwind CSS. Features modern design, dark mode, and responsive layout.',
 		tech: ['React', 'TypeScript', 'Tailwind CSS', 'Vite'],
-		image: 'https://placehold.co/400x250/svg?text=Portfolio',
+		images: [
+			'https://placehold.co/400x250/svg?text=Portfolio',
+			'https://placehold.co/400x250/svg?text=Portfolio+2',
+		],
 		link: '/projects/3',
 		github: 'https://github.com/username/portfolio',
 	},
@@ -21,7 +24,10 @@ const projectsData: ProjectData[] = [
 		description:
 			'An online shopping platform with product listings, cart functionality, and checkout process. Includes user authentication, product filtering, and payment integration.',
 		tech: ['React', 'Redux', 'Node.js', 'MongoDB', 'Express'],
-		image: 'https://placehold.co/400x250/svg?text=E-commerce',
+		images: [
+			'https://placehold.co/400x250/svg?text=E-commerce',
+			'https://placehold.co/400x250/svg?text=E-commerce+2',
+		],
 		link: '/projects/1',
 		github: 'https://github.com/username/ecommerce',
 	},
@@ -31,7 +37,7 @@ const projectsData: ProjectData[] = [
 		description:
 			'A productivity application for managing tasks, projects, and deadlines. Features include drag-and-drop task organization, priority levels, and progress tracking.',
 		tech: ['React', 'Firebase', 'Material UI', 'Redux'],
-		image: 'https://placehold.co/400x250/svg?text=Task+App',
+		image: 'https://placehold.co/400x250/svg?text=Task+App', // legacy single image
 		link: '/projects/2',
 	},
 	{
