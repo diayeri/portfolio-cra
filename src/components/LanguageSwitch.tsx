@@ -9,7 +9,7 @@ const LanguageSwitch: React.FC<LanguageSwitchProps> = ({ language, onToggle }) =
   return (
     <button
       onClick={onToggle}
-      className="ml-2 px-2 py-1 rounded text-xs font-semibold border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-800 hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors"
+      className="ml-2 px-2 py-1 rounded text-xs font-semibold border border-secondary-light dark:border-secondary-dark bg-surface-light dark:bg-surface-dark hover:bg-secondary-light dark:hover:bg-surface-dark transition-colors"
       aria-label="언어 변경"
     >
       {language === 'ko' ? 'EN' : '한글'}

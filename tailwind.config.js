@@ -8,14 +8,21 @@ export default {
   theme: {
     extend: {
       colors: {
-        'primary-light': '#60a5fa', // blue-400
-        'primary-dark': '#6d28d9', // purple-700
-        'secondary-light': '#a78bfa', // purple-400
-        'secondary-dark': '#8b5cf6', // violet-500
-        'background-light': '#f9fafb', // gray-50
-        'background-dark': '#1f2937', // gray-800
-        'text-light': '#111827', // gray-900
-        'text-dark': '#f9fafb', // gray-50
+        primary: 'var(--color-primary)',
+        'primary-light': 'var(--color-primary-light)',
+        'primary-dark': 'var(--color-primary-dark)',
+        secondary: 'var(--color-secondary)',
+        'secondary-light': 'var(--color-secondary-light)',
+        'secondary-dark': 'var(--color-secondary-dark)',
+        background: 'var(--color-background)',
+        'background-light': 'var(--color-background-light)',
+        'background-dark': 'var(--color-background-dark)',
+        text: 'var(--color-text)',
+        'text-light': 'var(--color-text-light)',
+        'text-dark': 'var(--color-text-dark)',
+        surface: 'var(--color-surface)',
+        'surface-light': 'var(--color-surface-light)',
+        'surface-dark': 'var(--color-surface-dark)',
       }
     },
   },

@@ -8,12 +8,45 @@
     -webkit-tap-highlight-color: transparent;
   }
 
+  :root {
+    --color-primary: #1a2746; /* 남색 포인트 */
+    --color-primary-light: #bfa181; /* 강조(짙은 베이지) */
+    --color-primary-dark: #a68a64;
+    --color-secondary: #bfa181; /* 베이지 포인트 */
+    --color-secondary-light: #e9e4dc;
+    --color-secondary-dark: #a68a64;
+    --color-background: #f8f5f2; /* 베이지 배경 */
+    --color-background-light: #f8f5f2;
+    --color-background-dark: #fff;
+    --color-text: #1a2746; /* 남색 텍스트 */
+    --color-text-light: #1a2746;
+    --color-text-dark: #22305a;
+    --color-surface: #fff;
+    --color-surface-light: #fff;
+    --color-surface-dark: #e9e4dc;
+  }
+  .dark {
+    --color-primary: #bfa181; /* 강조(베이지) */
+    --color-primary-light: #e9e4dc;
+    --color-primary-dark: #a68a64;
+    --color-secondary: #bfa181; /* 강조(베이지) */
+    --color-secondary-light: #e9e4dc;
+    --color-secondary-dark: #a68a64;
+    --color-background: #1a2233; /* 다크 네이비, 채도/명도 약간 높임 */
+    --color-background-light: #232a3a;
+    --color-background-dark: #181e2a;
+    --color-text: #f5f6fa; /* 일반 텍스트: 화이트계열 */
+    --color-text-light: #f5f6fa;
+    --color-text-dark: #e9e4dc;
+    --color-surface: #232a3a;
+    --color-surface-light: #232a3a;
+    --color-surface-dark: #2a3142;
+  }
+
   body {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    @apply bg-background-light dark:bg-background-dark;
-    @apply text-text-light dark:text-text-dark;
-    @apply transition-colors duration-300;
+    @apply bg-background text-text transition-colors duration-300;
   }
 }

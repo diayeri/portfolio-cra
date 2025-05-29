@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import LanguageContext from '../context/LanguageContext';
 
 /**
  * About 페이지 컴포넌트
@@ -7,6 +8,8 @@ import React from 'react';
  * - 기술 스택
  */
 const About: React.FC = () => {
+  const language = useContext(LanguageContext);
+
   // 기술 스택 데이터
   const skills = [
     { name: 'React', level: 90 },
@@ -65,20 +68,22 @@ const About: React.FC = () => {
       {/* <h1 className="text-3xl md:text-4xl font-bold mb-6">About Me</h1> */}
       
       {/* 프로필 섹션 */}
-      <div className="bg-white dark:bg-gray-800 rounded-xl p-6 shadow-md mb-8">
+      <div className="bg-surface-light dark:bg-surface-dark rounded-xl p-6 shadow-md mb-8">
         <div className="md:flex gap-8 items-center">
           <div className="md:w-1/3 mb-6 md:mb-0">
-            <div className="w-48 h-48 mx-auto rounded-full overflow-hidden bg-gray-200 dark:bg-gray-700">
+            <div className="w-48 h-48 mx-auto rounded-full overflow-hidden bg-secondary-light dark:bg-secondary-dark">
               {/* 임시로 이미지를 표시하지 않고 배경색만 보여줍니다 */}
-              <div className="w-full h-full bg-gray-200 dark:bg-gray-700"></div>
+              <div className="w-full h-full bg-secondary-light dark:bg-secondary-dark"></div>
             </div>
           </div>
           
           <div className="md:w-2/3">
             <h2 className="text-2xl font-bold mb-2">정다영</h2>
-            <p className="text-primary-light dark:text-primary-dark font-medium mb-4">Frontend Developer</p>
+            <p className="text-primary-light dark:text-primary-dark font-medium mb-4">
+              {language === 'ko' ? '프론트엔드 · UI 개발 · 디자인' : 'Frontend · UI Development · Design'}
+            </p>
             
-            <p className="text-gray-600 dark:text-gray-300 mb-4">
+            <p className="text-text-light dark:text-text-dark mb-4">
               Passionate frontend developer with over 5 years of experience building 
               responsive, user-friendly web applications. Specializing in React, 
               TypeScript, and modern CSS frameworks.
@@ -95,7 +100,7 @@ const About: React.FC = () => {
       </div>
       
       {/* 기술 스택 */}
-      <div className="bg-white dark:bg-gray-800 rounded-xl p-6 shadow-md mb-8">
+      <div className="bg-surface-light dark:bg-surface-dark rounded-xl p-6 shadow-md mb-8">
         <h2 className="text-xl font-bold mb-6">Skills & Expertise</h2>
         
         <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-4">
@@ -105,7 +110,7 @@ const About: React.FC = () => {
                 <span>{skill.name}</span>
                 <span>{skill.level}%</span>
               </div>
-              <div className="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2">
+              <div className="w-full bg-secondary-light dark:bg-secondary-dark rounded-full h-2">
                 <div 
                   className="bg-primary-light dark:bg-primary-dark h-2 rounded-full" 
                   style={{ width: `${skill.level}%` }}
@@ -117,7 +122,7 @@ const About: React.FC = () => {
       </div>
       
       {/* 경력 */}
-      <div className="bg-white dark:bg-gray-800 rounded-xl p-6 shadow-md mb-8">
+      <div className="bg-surface-light dark:bg-surface-dark rounded-xl p-6 shadow-md mb-8">
         <h2 className="text-xl font-bold mb-6">Work Experience</h2>
         
         <div className="space-y-6">
@@ -125,17 +130,17 @@ const About: React.FC = () => {
             <div key={exp.id} className="border-l-4 border-primary-light dark:border-primary-dark pl-4 pb-2">
               <div className="flex flex-col md:flex-row md:justify-between mb-2">
                 <h3 className="text-lg font-semibold">{exp.role}</h3>
-                <span className="text-gray-500 dark:text-gray-400">{exp.period}</span>
+                <span className="text-secondary-light dark:text-secondary-dark">{exp.period}</span>
               </div>
               <p className="text-primary-light dark:text-primary-dark mb-2">{exp.company}</p>
-              <p className="text-gray-600 dark:text-gray-300">{exp.description}</p>
+              <p className="text-text-light dark:text-text-dark">{exp.description}</p>
             </div>
           ))}
         </div>
       </div>
       
       {/* 교육 */}
-      <div className="bg-white dark:bg-gray-800 rounded-xl p-6 shadow-md">
+      <div className="bg-surface-light dark:bg-surface-dark rounded-xl p-6 shadow-md">
         <h2 className="text-xl font-bold mb-6">Education</h2>
         
         <div className="space-y-6">
@@ -143,7 +148,7 @@ const About: React.FC = () => {
             <div key={edu.id} className="border-l-4 border-primary-light dark:border-primary-dark pl-4 pb-2">
               <div className="flex flex-col md:flex-row md:justify-between mb-2">
                 <h3 className="text-lg font-semibold">{edu.degree}</h3>
-                <span className="text-gray-500 dark:text-gray-400">{edu.period}</span>
+                <span className="text-secondary-light dark:text-secondary-dark">{edu.period}</span>
               </div>
               <p className="text-primary-light dark:text-primary-dark">{edu.institution}</p>
             </div>
