@@ -26,7 +26,7 @@ const DefaultLayout: React.FC = () => {
   // 언어를 context로 하위 컴포넌트에 전달
   return (
     <LanguageContext.Provider value={language}>
-      <div className='flex min-h-screen text-xs transition-colors duration-300 bg-background-light dark:bg-background-dark text-text-light dark:text-text-dark md:text-sm lg:text-base'>
+      <div className='flex min-h-screen text-xs duration-300 text-text-light dark:text-text-dark md:text-sm lg:text-base'>
         {/* 다크모드 토글: 페이지 상단 우측에 고정 */}
         <div className='fixed z-50 flex items-center top-4 right-6'>
           <ToggleSwitch small />
@@ -49,7 +49,7 @@ const DefaultLayout: React.FC = () => {
                   <li key={item.to} className='w-full'>
                     <Link
                       to={item.to}
-                      className={`inline py-1 text-left pl-0 transition-colors font-medium font-mono ${
+                      className={`inline py-1 text-left pl-0 font-medium font-mono ${
                         location.pathname.startsWith(item.to)
                           ? 'text-primary-light dark:text-primary-dark font-semibold'
                           : 'hover:text-primary-light dark:hover:text-primary-dark'
@@ -75,8 +75,8 @@ const DefaultLayout: React.FC = () => {
         {/* Main content area: only this scrolls */}
         <main
           className={`${
-            isProjectDetail ? 'w-full' : 'w-full md:px-[180px]'
-          } flex-grow px-2 md:px-6 lg:px-8 py-4 md:py-8 overflow-y-auto`}
+            isProjectDetail ? 'w-full' : 'w-full md:pl-60'
+          } flex-grow px-2 py-4 md:py-8 overflow-y-auto`}
           style={{ height: '100vh' }}
         >
           <Outlet />

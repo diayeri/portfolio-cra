@@ -21,25 +21,25 @@ export const useDarkMode = () => {
   // 다크모드 변경 시 HTML 클래스 및 로컬 스토리지 업데이트
   useEffect(() => {
     const html = document.documentElement;
-    
+
     if (isDarkMode) {
       html.classList.add('dark');
     } else {
       html.classList.remove('dark');
     }
-    
+
     // 사용자 설정 저장
     localStorage.setItem('darkMode', isDarkMode.toString());
   }, [isDarkMode]);
 
   // 다크모드 토글 함수
   const toggleDarkMode = () => {
-    setIsDarkMode(prev => !prev);
+    setIsDarkMode((prev) => !prev);
   };
 
   return {
     isDarkMode,
-    toggleDarkMode
+    toggleDarkMode,
   };
 };
 

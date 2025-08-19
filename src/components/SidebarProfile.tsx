@@ -9,7 +9,7 @@ const SidebarProfile: React.FC = () => {
       <p className='mb-1 text-base font-bold tracking-tight md:text-lg'>
         <a
           href='/'
-          className='transition-colors hover:text-primary-light dark:hover:text-primary-dark'
+          className='hover:text-primary-light dark:hover:text-primary-dark'
         >
           {language === 'ko' ? '정다영' : 'Dayoung Jung'}
         </a>
@@ -22,7 +22,7 @@ const SidebarProfile: React.FC = () => {
       <div className='flex mt-1 space-x-2'>
         <a
           href='mailto:example@email.com'
-          className='flex items-center transition-colors hover:text-primary-light dark:hover:text-primary-dark'
+          className='flex items-center hover:text-primary-light dark:hover:text-primary-dark'
           aria-label={language === 'ko' ? '이메일' : 'Email'}
         >
           <svg
@@ -38,7 +38,7 @@ const SidebarProfile: React.FC = () => {
           href='https://github.com/username'
           target='_blank'
           rel='noopener noreferrer'
-          className='transition-colors hover:text-primary-light dark:hover:text-primary-dark'
+          className='hover:text-primary-light dark:hover:text-primary-dark'
           aria-label='GitHub'
         >
           <svg
@@ -54,7 +54,7 @@ const SidebarProfile: React.FC = () => {
           href='https://linkedin.com/in/username'
           target='_blank'
           rel='noopener noreferrer'
-          className='transition-colors hover:text-primary-light dark:hover:text-primary-dark'
+          className='hover:text-primary-light dark:hover:text-primary-dark'
           aria-label='LinkedIn'
         >
           in

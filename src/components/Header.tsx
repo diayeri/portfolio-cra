@@ -39,7 +39,7 @@ const Header: React.FC<HeaderProps> = ({ className = '' }) => {
       <div className='flex items-center'>
         <Link
           to='/'
-          className='text-xl font-bold transition-colors md:text-2xl hover:text-primary-light dark:hover:text-primary-dark'
+          className='text-xl font-bold md:text-2xl hover:text-primary-light dark:hover:text-primary-dark'
         >
           UI Dev Portfolio - DY
         </Link>
@@ -51,7 +51,7 @@ const Header: React.FC<HeaderProps> = ({ className = '' }) => {
           <li>
             <Link
               to='/projects'
-              className={`transition-colors ${
+              className={`${
                 location.pathname.startsWith('/projects')
                   ? 'text-primary-light dark:text-primary-dark'
                   : 'text-gray-500 dark:text-gray-400 hover:text-primary-light dark:hover:text-primary-dark'
@@ -63,7 +63,7 @@ const Header: React.FC<HeaderProps> = ({ className = '' }) => {
           <li>
             <Link
               to='/about'
-              className={`transition-colors ${
+              className={`${
                 location.pathname.startsWith('/about')
                   ? 'text-primary-light dark:text-primary-dark'
                   : 'text-gray-500 dark:text-gray-400 hover:text-primary-light dark:hover:text-primary-dark'
@@ -75,7 +75,7 @@ const Header: React.FC<HeaderProps> = ({ className = '' }) => {
           <li>
             <Link
               to='/contact'
-              className={`transition-colors ${
+              className={`${
                 location.pathname.startsWith('/contact')
                   ? 'text-primary-light dark:text-primary-dark'
                   : 'text-gray-500 dark:text-gray-400 hover:text-primary-light dark:hover:text-primary-dark'

@@ -29,22 +29,25 @@ const About: React.FC = () => {
       role: 'Senior Frontend Developer',
       company: 'Tech Company Inc.',
       period: '2023 - Present',
-      description: 'Led the development of responsive web applications using React and TypeScript. Improved performance by 40% through code optimization and modern techniques.'
+      description:
+        'Led the development of responsive web applications using React and TypeScript. Improved performance by 40% through code optimization and modern techniques.',
     },
     {
       id: 2,
       role: 'Frontend Developer',
       company: 'Digital Solutions Ltd.',
       period: '2020 - 2023',
-      description: 'Developed and maintained multiple client projects using React, Redux, and modern CSS frameworks. Collaborated with UX designers to implement pixel-perfect designs.'
+      description:
+        'Developed and maintained multiple client projects using React, Redux, and modern CSS frameworks. Collaborated with UX designers to implement pixel-perfect designs.',
     },
     {
       id: 3,
       role: 'Web Developer Intern',
       company: 'StartUp Vision',
       period: '2019 - 2020',
-      description: 'Assisted in developing web applications, gained experience in modern JavaScript frameworks and responsive design principles.'
-    }
+      description:
+        'Assisted in developing web applications, gained experience in modern JavaScript frameworks and responsive design principles.',
+    },
   ];
 
   // 교육 데이터
@@ -53,66 +56,68 @@ const About: React.FC = () => {
       id: 1,
       degree: 'Master of Computer Science',
       institution: 'Tech University',
-      period: '2017 - 2019'
+      period: '2017 - 2019',
     },
     {
       id: 2,
       degree: 'Bachelor of Computer Science',
       institution: 'State University',
-      period: '2013 - 2017'
-    }
+      period: '2013 - 2017',
+    },
   ];
 
   return (
-    <div className="max-w-4xl mx-auto py-24 px-4">
-      {/* <h1 className="text-3xl md:text-4xl font-bold mb-6">About Me</h1> */}
-      
+    <div className='flex flex-col w-full max-w-4xl gap-12 p-12 my-24 shadow-md bg-surface-light dark:bg-surface-dark'>
+      {/* <h1 className="mb-6 text-3xl font-bold md:text-4xl">About Me</h1> */}
+
       {/* 프로필 섹션 */}
-      <div className="bg-surface-light dark:bg-surface-dark rounded-xl p-6 shadow-md mb-8">
-        <div className="md:flex gap-8 items-center">
-          <div className="md:w-1/3 mb-6 md:mb-0">
-            <div className="w-48 h-48 mx-auto rounded-full overflow-hidden bg-secondary-light dark:bg-secondary-dark">
+      <div>
+        <div className='items-center gap-8 md:flex'>
+          <div className='mb-6 md:w-1/3 md:mb-0'>
+            <div className='w-48 h-48 mx-auto overflow-hidden rounded-full bg-secondary-light dark:bg-secondary-dark'>
               {/* 임시로 이미지를 표시하지 않고 배경색만 보여줍니다 */}
-              <div className="w-full h-full bg-secondary-light dark:bg-secondary-dark"></div>
+              <div className='w-full h-full bg-secondary-light dark:bg-secondary-dark'></div>
             </div>
           </div>
-          
-          <div className="md:w-2/3">
-            <h2 className="text-2xl font-bold mb-2">정다영</h2>
-            <p className="text-primary-light dark:text-primary-dark font-medium mb-4">
-              {language === 'ko' ? '프론트엔드 · UI 개발 · 디자인' : 'Frontend · UI Development · Design'}
+
+          <div className='md:w-2/3'>
+            <h2 className='mb-2 text-2xl font-bold'>정다영</h2>
+            <p className='mb-4 font-medium text-primary-light dark:text-primary-dark'>
+              {language === 'ko'
+                ? '프론트엔드 · UI 개발 · 디자인'
+                : 'Frontend · UI Development · Design'}
             </p>
-            
-            <p className="text-text-light dark:text-text-dark mb-4">
-              Passionate frontend developer with over 5 years of experience building 
-              responsive, user-friendly web applications. Specializing in React, 
-              TypeScript, and modern CSS frameworks.
+
+            <p className='mb-4 text-text-light dark:text-text-dark'>
+              Passionate frontend developer with over 5 years of experience
+              building responsive, user-friendly web applications. Specializing
+              in React, TypeScript, and modern CSS frameworks.
             </p>
-            
-            <a 
-              href="#"
-              className="inline-block px-4 py-2 bg-primary-light dark:bg-primary-dark text-white rounded-md hover:opacity-90 transition-opacity"
+
+            <a
+              href='#'
+              className='inline-block px-4 py-2 text-white transition-opacity rounded-md bg-primary-light dark:bg-primary-dark hover:opacity-90'
             >
               Download CV
             </a>
           </div>
         </div>
       </div>
-      
+
       {/* 기술 스택 */}
-      <div className="bg-surface-light dark:bg-surface-dark rounded-xl p-6 shadow-md mb-8">
-        <h2 className="text-xl font-bold mb-6">Skills & Expertise</h2>
-        
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-4">
+      <div>
+        <h2 className='mb-6 text-xl font-bold'>Skills & Expertise</h2>
+
+        <div className='grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-4'>
           {skills.map((skill) => (
             <div key={skill.name}>
-              <div className="flex justify-between mb-1">
+              <div className='flex justify-between mb-1'>
                 <span>{skill.name}</span>
                 <span>{skill.level}%</span>
               </div>
-              <div className="w-full bg-secondary-light dark:bg-secondary-dark rounded-full h-2">
-                <div 
-                  className="bg-primary-light dark:bg-primary-dark h-2 rounded-full" 
+              <div className='w-full h-2 rounded-full bg-secondary-light dark:bg-secondary-dark'>
+                <div
+                  className='h-2 rounded-full bg-primary-light dark:bg-primary-dark'
                   style={{ width: `${skill.level}%` }}
                 ></div>
               </div>
@@ -120,37 +125,53 @@ const About: React.FC = () => {
           ))}
         </div>
       </div>
-      
+
       {/* 경력 */}
-      <div className="bg-surface-light dark:bg-surface-dark rounded-xl p-6 shadow-md mb-8">
-        <h2 className="text-xl font-bold mb-6">Work Experience</h2>
-        
-        <div className="space-y-6">
+      <div>
+        <h2 className='mb-6 text-xl font-bold'>Work Experience</h2>
+
+        <div className='space-y-6'>
           {experiences.map((exp) => (
-            <div key={exp.id} className="border-l-4 border-primary-light dark:border-primary-dark pl-4 pb-2">
-              <div className="flex flex-col md:flex-row md:justify-between mb-2">
-                <h3 className="text-lg font-semibold">{exp.role}</h3>
-                <span className="text-secondary-light dark:text-secondary-dark">{exp.period}</span>
+            <div
+              key={exp.id}
+              className='pb-2 pl-4 border-l-4 border-primary-light dark:border-primary-dark'
+            >
+              <div className='flex flex-col mb-2 md:flex-row md:justify-between'>
+                <h3 className='text-lg font-semibold'>{exp.role}</h3>
+                <span className='text-secondary-light dark:text-secondary-dark'>
+                  {exp.period}
+                </span>
               </div>
-              <p className="text-primary-light dark:text-primary-dark mb-2">{exp.company}</p>
-              <p className="text-text-light dark:text-text-dark">{exp.description}</p>
+              <p className='mb-2 text-primary-light dark:text-primary-dark'>
+                {exp.company}
+              </p>
+              <p className='text-text-light dark:text-text-dark'>
+                {exp.description}
+              </p>
             </div>
           ))}
         </div>
       </div>
-      
+
       {/* 교육 */}
-      <div className="bg-surface-light dark:bg-surface-dark rounded-xl p-6 shadow-md">
-        <h2 className="text-xl font-bold mb-6">Education</h2>
-        
-        <div className="space-y-6">
+      <div>
+        <h2 className='mb-6 text-xl font-bold'>Education</h2>
+
+        <div className='space-y-6'>
           {education.map((edu) => (
-            <div key={edu.id} className="border-l-4 border-primary-light dark:border-primary-dark pl-4 pb-2">
-              <div className="flex flex-col md:flex-row md:justify-between mb-2">
-                <h3 className="text-lg font-semibold">{edu.degree}</h3>
-                <span className="text-secondary-light dark:text-secondary-dark">{edu.period}</span>
+            <div
+              key={edu.id}
+              className='pb-2 pl-4 border-l-4 border-primary-light dark:border-primary-dark'
+            >
+              <div className='flex flex-col mb-2 md:flex-row md:justify-between'>
+                <h3 className='text-lg font-semibold'>{edu.degree}</h3>
+                <span className='text-secondary-light dark:text-secondary-dark'>
+                  {edu.period}
+                </span>
               </div>
-              <p className="text-primary-light dark:text-primary-dark">{edu.institution}</p>
+              <p className='text-primary-light dark:text-primary-dark'>
+                {edu.institution}
+              </p>
             </div>
           ))}
         </div>
