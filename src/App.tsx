@@ -133,37 +133,37 @@ const AppRoutes = () => {
 
 function App() {
   // 애플리케이션 초기화
-  useEffect(() => {
-    // Google Analytics 초기화
-    initializeGoogleAnalytics();
+  // useEffect(() => {
+  //   // Google Analytics 초기화
+  //   initializeGoogleAnalytics();
 
-    // 페이지 타이틀 기본값 설정
-    document.title = getSiteTitle() || 'Portfolio';
+  //   // 페이지 타이틀 기본값 설정
+  //   document.title = getSiteTitle() || 'Portfolio';
 
-    // 테마 변경 감지
-    const handleThemeChange = (e: MediaQueryListEvent) => {
-      document.documentElement.classList.toggle('dark', e.matches);
-    };
+  //   // 테마 변경 감지
+  //   const handleThemeChange = (e: MediaQueryListEvent) => {
+  //     document.documentElement.classList.toggle('dark', e.matches);
+  //   };
 
-    const darkModeMediaQuery = window.matchMedia(
-      '(prefers-color-scheme: dark)'
-    );
-    darkModeMediaQuery.addEventListener('change', handleThemeChange);
+  //   const darkModeMediaQuery = window.matchMedia(
+  //     '(prefers-color-scheme: dark)'
+  //   );
+  //   darkModeMediaQuery.addEventListener('change', handleThemeChange);
 
-    // 사용자 테마 기본 설정
-    if (
-      localStorage.theme === 'dark' ||
-      (!('theme' in localStorage) && darkModeMediaQuery.matches)
-    ) {
-      document.documentElement.classList.add('dark');
-    } else {
-      document.documentElement.classList.remove('dark');
-    }
+  //   // 사용자 테마 기본 설정
+  //   if (
+  //     localStorage.theme === 'dark' ||
+  //     (!('theme' in localStorage) && darkModeMediaQuery.matches)
+  //   ) {
+  //     document.documentElement.classList.add('dark');
+  //   } else {
+  //     document.documentElement.classList.remove('dark');
+  //   }
 
-    return () => {
-      darkModeMediaQuery.removeEventListener('change', handleThemeChange);
-    };
-  }, []);
+  //   return () => {
+  //     darkModeMediaQuery.removeEventListener('change', handleThemeChange);
+  //   };
+  // }, []);
 
   return (
     <BrowserRouter>

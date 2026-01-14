@@ -27,10 +27,7 @@ const DefaultLayout: React.FC = () => {
   return (
     <LanguageContext.Provider value={language}>
       <div className='w-full h-screen text-xs duration-300 text-text-light dark:text-text-dark md:text-sm lg:text-base'>
-        <header
-          className='fixed top-0 z-50 flex items-center justify-between w-full px-6 py-5'
-          style={{ background: 'none', borderRight: 'none' }}
-        >
+        <header className='fixed top-0 z-50 flex items-center justify-between w-full px-6 py-5 bg-white'>
           <a href='/' className='inline-block w-20'>
             LOGO
           </a>
@@ -56,18 +53,17 @@ const DefaultLayout: React.FC = () => {
               ))}
             </ul>
           </nav>
-          <div className='flex items-center w-20'>
+          {/* <div className='flex items-center w-20'>
             <ToggleSwitch small />
             <LanguageSwitch
               language={language}
               onToggle={handleLanguageToggle}
             />
-          </div>
+          </div> */}
         </header>
 
         {/* Main content area: only this scrolls */}
         <main className='w-full flex-grow p-4 md:p-6 overflow-y-auto h-[100vh]'>
-          <div className='fixed border top-2 bottom-2 left-2 right-2'></div>
           <Outlet />
         </main>
         <footer className='w-full mt-8 text-xs text-left text-secondary-light dark:text-secondary-dark'>
