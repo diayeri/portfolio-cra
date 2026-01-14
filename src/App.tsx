@@ -6,7 +6,6 @@ import Home from './pages/Home';
 import Projects from './pages/Projects';
 import About from './pages/About';
 import Contact from './pages/Contact';
-import CustomCursor from './components/CustomCursor';
 import { initializeGoogleAnalytics, trackPageView } from './utils/analytics';
 import { getSiteTitle } from './utils/env';
 
@@ -46,8 +45,6 @@ const AppRoutes = () => {
 
   return (
     <>
-      {/* <CustomCursor /> */}
-
       <Suspense fallback={<LoadingFallback />}>
         <Routes>
           <Route path='/' element={<DefaultLayout />}>
