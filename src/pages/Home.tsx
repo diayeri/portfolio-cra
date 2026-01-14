@@ -1,5 +1,6 @@
 import { useNavigate } from 'react-router-dom';
 import MainAnimation from '@/components/MainAnimation';
+import { ScrollIndicator } from '@/components/ScrollIndicator';
 import { Button } from '@/components/Button';
 import { Github, ArrowDown } from 'lucide-react';
 import { motion } from 'framer-motion';
@@ -61,6 +62,18 @@ const Home = () => {
               Projects
             </Button>
           </div>
+        </motion.div>
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{
+            delay: 4,
+            duration: 1,
+            ease: [0.2, 1, 0.4, 1],
+          }}
+          className='absolute left-center bottom-10'
+        >
+          <ScrollIndicator />
         </motion.div>
       </section>
       {/* Core Competencies */}
