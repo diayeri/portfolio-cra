@@ -57,7 +57,7 @@ export function Hero() {
         </p>
         <div className='z-10 flex justify-center gap-2 mt-8'>
           <Button
-            onClick={() => navigate('/projects')}
+            href='https://github.com/diayeri'
             color='primary'
             variant='outline'
             iconRight={<Github />}

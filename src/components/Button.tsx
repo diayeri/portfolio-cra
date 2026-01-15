@@ -1,23 +1,39 @@
-type ButtonProps = {
+type BaseProps = {
   variant?: 'solid' | 'outline';
   color?: 'primary' | 'gray';
   size?: 'sm' | 'md' | 'lg';
   fullWidth?: boolean;
   iconLeft?: React.ReactNode;
   iconRight?: React.ReactNode;
-} & React.ButtonHTMLAttributes<HTMLButtonElement>;
+  className?: string;
+  children: React.ReactNode;
+};
 
-export function Button({
-  variant = 'solid',
-  color = 'primary',
-  size = 'md',
-  fullWidth = false,
-  iconLeft,
-  iconRight,
-  children,
-  className = '',
-  ...props
-}: ButtonProps) {
+type ButtonAsButton = BaseProps &
+  React.ButtonHTMLAttributes<HTMLButtonElement> & {
+    href?: undefined;
+  };
+
+type ButtonAsLink = BaseProps &
+  React.AnchorHTMLAttributes<HTMLAnchorElement> & {
+    href: string;
+  };
+
+type ButtonProps = ButtonAsButton | ButtonAsLink;
+
+export function Button(props: ButtonProps) {
+  const {
+    variant = 'solid',
+    color = 'primary',
+    size = 'md',
+    fullWidth = false,
+    iconLeft,
+    iconRight,
+    children,
+    className = '',
+    ...rest
+  } = props;
+
   const base =
     'inline-flex items-center justify-center gap-2 rounded-full font-medium transition-all duration-200 shadow-sm disabled:opacity-50 disabled:cursor-not-allowed';
 
@@ -43,24 +59,23 @@ export function Button({
     },
     outline: {
       primary:
-        'border border-primary-light text-primary-light hover:bg-primary-dark hover:text-white',
+        'border border-primary-light text-primary-light hover:text-primary-dark hover:border-primary-dark',
       gray: 'border border-gray-300 text-gray-700 hover:bg-gray-100',
     },
   };
 
-  return (
-    <button
-      className={[
-        base,
-        sizes[size].button,
-        variants[variant][color],
-        fullWidth && 'w-full',
-        className,
-      ]
-        .filter(Boolean)
-        .join(' ')}
-      {...props}
-    >
+  const classes = [
+    base,
+    sizes[size].button,
+    variants[variant][color],
+    fullWidth && 'w-full',
+    className,
+  ]
+    .filter(Boolean)
+    .join(' ');
+
+  const content = (
+    <>
       {iconLeft && (
         <span className={`[&>svg]:w-full [&>svg]:h-full ${sizes[size].icon}`}>
           {iconLeft}
@@ -72,6 +87,28 @@ export function Button({
           {iconRight}
         </span>
       )}
+    </>
+  );
+
+  if ('href' in props) {
+    return (
+      <a
+        {...(rest as React.AnchorHTMLAttributes<HTMLAnchorElement>)}
+        href={props.href}
+        className={classes}
+        target='_blank'
+      >
+        {content}
+      </a>
+    );
+  }
+
+  return (
+    <button
+      {...(rest as React.ButtonHTMLAttributes<HTMLButtonElement>)}
+      className={classes}
+    >
+      {content}
     </button>
   );
 }

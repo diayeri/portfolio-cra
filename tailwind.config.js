@@ -4,6 +4,10 @@ export default {
   // darkMode: 'class', // class 기반 다크모드 설정
   theme: {
     extend: {
+      fontFamily: {
+        sans: ['Satoshi', 'Pretendard', 'sans-serif'],
+        mono: ['Space Mono', 'monospace'],
+      },
       colors: {
         primary: 'var(--color-primary)',
         'primary-light': 'var(--color-primary-light)',
