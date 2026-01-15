@@ -3,6 +3,7 @@ import ProjectCard from '../components/ProjectCard';
 import AnimatedElement from '../components/AnimatedElement';
 import { useNavigate } from 'react-router-dom';
 import type { ProjectData } from '../types/ProjectData';
+import { Button } from '@/components/Button';
 
 const projectsData: ProjectData[] = [
   {
@@ -65,8 +66,16 @@ const projectsData: ProjectData[] = [
 const Projects: React.FC = () => {
   const navigate = useNavigate();
   return (
-    <div className='px-2 py-12 md:py-16 md:px-4'>
-      <div className='flex flex-col gap-6'>
+    <section className='wrapper-content'>
+      <div className='py-10 text-center'>
+        <h2 className='mb-10 title'>All Projects</h2>
+        <div className='flex justify-center gap-2'>
+          <Button>Frontend</Button>
+          <Button>Markup</Button>
+          <Button>Design</Button>
+        </div>
+      </div>
+      <div className='grid grid-cols-3 gap-5 content'>
         {projectsData.map((project, index) => (
           <AnimatedElement
             key={project.id}
@@ -86,7 +95,7 @@ const Projects: React.FC = () => {
           </AnimatedElement>
         ))}
       </div>
-    </div>
+    </section>
   );
 };
 

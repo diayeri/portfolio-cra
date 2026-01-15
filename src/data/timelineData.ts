@@ -15,7 +15,7 @@ export const timelineData = [
     title: '(Kakao) Krust Universe, Quarkonix',
     role: 'UI Developer',
     details:
-      '블록체인 기반 마켓플레이스와 트레이드 웹 앱 UI 개발, React 및 TypeScript 활용',
+      '블록체인 기반 마켓플레이스와 트레이드 웹 앱 UI 개발, React/TypeScript 활용',
     highlights: [
       'React 컴포넌트 구현 및 Storybook으로 UI 체계적 문서화 관리',
       '컴포넌트 단위 반응형 UI 제작과 QA 수행으로 실무 코드 경험 강화',

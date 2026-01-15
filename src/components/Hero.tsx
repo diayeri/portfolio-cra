@@ -68,7 +68,7 @@ export default function Hero() {
             onClick={() => navigate('/projects')}
             iconRight={<ArrowDown />}
           >
-            Projects
+            More
           </Button>
         </div>
       </motion.div>

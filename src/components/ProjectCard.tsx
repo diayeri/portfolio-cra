@@ -19,13 +19,12 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
   return (
     <article
       className={`
-        relative flex bg-white dark:bg-gray-800 rounded-xl overflow-hidden shadow-md
-        hover:shadow-xl transition-all duration-300 group
+        relative flex flex-col bg-white rounded-xl overflow-hidden shadow-md transition-all duration-300 group
         ${className}
       `}
     >
       {/* 프로젝트 이미지 */}
-      <div className='relative flex-none overflow-hidden w-60'>
+      <div className='relative flex-none w-full overflow-hidden h-[240px]'>
         {Array.isArray(project.images) && project.images.length > 0 ? (
           <img
             src={project.images[0]}
@@ -41,11 +40,6 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
             loading='lazy'
           />
         )}
-        <div className='absolute inset-0 flex items-center justify-center transition-opacity duration-300 bg-black opacity-0 bg-opacity-40 group-hover:opacity-100'>
-          <span className='px-4 py-2 font-medium text-white transition-transform duration-300 transform translate-y-4 rounded-lg bg-primary-light dark:bg-primary-dark group-hover:translate-y-0'>
-            View Details
-          </span>
-        </div>
       </div>
 
       {/* 프로젝트 정보 */}
@@ -95,9 +89,6 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
           </div>
         )}
       </div>
-
-      {/* 하단 그라디언트 효과와 "View Project" 텍스트 */}
-      <div className='absolute bottom-0 left-0 right-0 h-16 pointer-events-none bg-gradient-to-t from-white dark:from-gray-800 to-transparent' />
     </article>
   );
 };

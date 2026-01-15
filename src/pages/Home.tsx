@@ -1,6 +1,7 @@
 import Hero from '@/components/Hero';
 import Intro from '@/components/Intro';
 import Timeline from '@/components/Timeline';
+import Portfolio from '@/components/Portfolio';
 
 const Home = () => {
   return (
@@ -10,6 +11,7 @@ const Home = () => {
       {/* Core Competencies */}
       <Intro />
       {/* Projects */}
+      <Portfolio />
       {/* Career History */}
       <Timeline />
     </div>
