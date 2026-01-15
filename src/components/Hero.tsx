@@ -36,14 +36,16 @@ export function Hero() {
       <div className='absolute left-center top-center'>
         <MainAnimation isFirstVisit={isFirstVisit} />
       </div>
-      <h2 className='font-mono text-2xl'>from Design to Frontend</h2>
+      <h2 className='font-mono text-2xl'>Design to Development</h2>
       <motion.h1
         {...motionProps(3.2)}
-        className='z-10 mt-5 text-white text-8xl'
+        className='z-10 mt-5 font-medium text-white text-8xl'
       >
-        <span className='ml-[-50px]'>UI Developer,</span>
+        <span className='ml-[-48px] text-transparent bg-clip-text bg-gradient-to-r from-primary-dark to-black drop-shadow-sm'>
+          UI Developer,
+        </span>
         <br />
-        <span className='mr-[-220px] text-nowrap drop-shadow-xl'>
+        <span className='mr-[-244px] text-nowrap drop-shadow-xl'>
           Dayoung Jung
         </span>
       </motion.h1>
