@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Button } from './Button';
 import { ArrowRight } from 'lucide-react';
@@ -7,6 +7,12 @@ import { projectsData } from '@/data/projectsData';
 const Portfolio = () => {
   const [activeProject, setActiveProject] = useState(projectsData[0]);
   const navigate = useNavigate();
+  useEffect(() => {
+    projectsData.forEach((project) => {
+      const img = new Image();
+      img.src = project.cover;
+    });
+  }, []);
 
   return (
     <section className='bg-black wrapper-content'>

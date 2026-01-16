@@ -2,8 +2,9 @@ import React, { useState } from 'react';
 import ProjectCard from '../components/ProjectCard';
 import AnimatedElement from '../components/AnimatedElement';
 import { useNavigate } from 'react-router-dom';
-import type { ProjectData } from '../types/ProjectData';
 import { Button } from '@/components/Button';
+import type { ProjectData } from '../types/ProjectData';
+// import { projectsData } from '@/data/projectsData';
 
 const projectsData: ProjectData[] = [
   {
