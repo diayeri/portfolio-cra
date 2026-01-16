@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import ProjectCard from '../components/ProjectCard';
 import AnimatedElement from '../components/AnimatedElement';
 import { useNavigate } from 'react-router-dom';
@@ -63,16 +63,26 @@ const projectsData: ProjectData[] = [
   },
 ];
 
+type Category = 'all' | 'frontend' | 'markup' | 'design';
+
 const Projects: React.FC = () => {
+  const [category, setCategory] = useState<Category>('all');
+
   const navigate = useNavigate();
   return (
     <section className='wrapper-content'>
       <div className='py-10 text-center'>
-        <h2 className='mb-10 title'>All Projects</h2>
+        <h2 className='mb-10 title'>Projects</h2>
         <div className='flex justify-center gap-2'>
-          <Button>Frontend</Button>
-          <Button>Markup</Button>
-          <Button>Design</Button>
+          {(['all', 'frontend', 'markup', 'design'] as Category[]).map((c) => (
+            <Button
+              key={c}
+              onClick={() => setCategory(c)}
+              className={category === c ? 'active' : ''}
+            >
+              {c.toUpperCase()}
+            </Button>
+          ))}
         </div>
       </div>
       <div className='grid grid-cols-3 gap-5 content'>

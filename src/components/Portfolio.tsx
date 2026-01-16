@@ -29,7 +29,7 @@ const Portfolio = () => {
             <img
               src={activeProject.cover}
               alt={activeProject.title}
-              className='object-cover object-left-top w-full h-full transition-all duration-300'
+              className='object-contain object-center w-full h-full transition-all duration-300'
             />
           </div>
           {/* 프로젝트 리스트 */}
@@ -59,7 +59,7 @@ const Portfolio = () => {
                         : ' text-gray-500'
                     }`}
                   >
-                    {project.tag}
+                    {project.category}
                   </span>
                 </a>
               </li>
