@@ -1,4 +1,5 @@
 import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom';
+import { ScrollToTop } from './components/ScrollToTop';
 import { useEffect, lazy, Suspense } from 'react';
 import './App.css';
 import { OneTimeProvider } from './context/OneTimeContext';
@@ -46,6 +47,7 @@ const AppRoutes = () => {
   return (
     <>
       <Suspense fallback={<LoadingFallback />}>
+        <ScrollToTop />
         <Routes>
           <Route path='/' element={<DefaultLayout />}>
             <Route index element={<Home />} />
