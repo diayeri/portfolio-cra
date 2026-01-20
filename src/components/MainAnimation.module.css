@@ -72,6 +72,9 @@
   border-radius: 50%;
   transform: scale(12%, 12%) translate(0, -235px) rotate(15deg);
   animation: none;
+  .glass::after {
+    animation: none;
+  }
 }
 .bg {
   animation: bg 1s both alternate infinite 1.5s;
@@ -124,6 +127,7 @@
 .glasses {
   background-color: #fbe9e7;
   animation: glasses 1s both 2 1.8s;
+  --bgc-after: #fbe9e7;
 }
 .glass::after {
   content: '';
@@ -134,4 +138,5 @@
 }
 .eye {
   background-color: #4d342f;
+  --bgc-after: #4d342f;
 }

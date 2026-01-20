@@ -1,32 +1,29 @@
-import { useEffect } from 'react';
-import { useOneTime } from '@/context/OneTimeContext';
+import { useEffect, useState } from 'react';
 import MainAnimation from '@/components/MainAnimation';
 import { ScrollIndicator } from '@/components/ScrollIndicator';
 import { Button } from '@/components/Button';
 import { Github, ArrowDown } from 'lucide-react';
+import { useHero } from '@/context/HeroContext';
 import { motion } from 'framer-motion';
-import type { HTMLMotionProps } from 'framer-motion';
+import { fadeUp } from '@/motion';
 
 export default function Hero() {
-  const { flags, setFlag } = useOneTime();
-  const isFirstVisit = flags['hero'] !== false; // undefined or true -> 처음
+  const { visited, setVisited } = useHero();
+  const [showStatic, setShowStatic] = useState(false);
 
   useEffect(() => {
-    if (isFirstVisit) {
-      const timer = setTimeout(() => setFlag('hero', false), 5000);
+    if (!visited) {
+      // 첫 방문 시 애니메이션 재생 후에 visited 상태 업데이트
+      const timer = setTimeout(() => {
+        setVisited(true);
+        setShowStatic(true);
+      }, 5200);
       return () => clearTimeout(timer);
+    } else {
+      // 이미 방문한 경우 바로 static 상태
+      setShowStatic(true);
     }
-  }, [isFirstVisit]);
-
-  const motionProps = (delay: number): HTMLMotionProps<'h1'> => ({
-    initial: isFirstVisit ? { opacity: 0, y: 20 } : { opacity: 1, y: 0 },
-    animate: { opacity: 1, y: 0 },
-    transition: {
-      delay: isFirstVisit ? delay : 0,
-      duration: isFirstVisit ? 1 : 0,
-      ease: [0.2, 1, 0.4, 1],
-    },
-  });
+  }, [visited, setVisited]);
 
   const handleScrollDown = () => {
     window.scrollBy({
@@ -38,11 +35,11 @@ export default function Hero() {
   return (
     <section className='relative flex flex-col items-center justify-center w-full h-screen py-10 text-center bg-ani-gradient'>
       <div className='absolute left-center top-center'>
-        <MainAnimation isFirstVisit={isFirstVisit} />
+        <MainAnimation showStatic={showStatic} />
       </div>
       <h2 className='font-mono text-2xl'>Design to Development</h2>
       <motion.h1
-        {...motionProps(3.2)}
+        {...fadeUp(3.2, visited)}
         className='z-10 mt-5 font-medium text-white text-8xl'
       >
         <span className='ml-[-48px] text-transparent bg-clip-text bg-gradient-to-r from-primary-dark to-black drop-shadow-sm'>
@@ -53,7 +50,8 @@ export default function Hero() {
           Dayoung Jung
         </span>
       </motion.h1>
-      <motion.div {...motionProps(4)}>
+
+      <motion.div {...fadeUp(4, visited)}>
         <p className='mt-20 text-base'>
           디자인 이해를 바탕으로 UI 개발을 주력으로 하며 <br />
           React, TypeScript 기반 프론트엔드 환경에서 <br />
@@ -73,8 +71,9 @@ export default function Hero() {
           </Button>
         </div>
       </motion.div>
+
       <motion.div
-        {...motionProps(4)}
+        {...fadeUp(4, visited)}
         className='absolute left-center bottom-10'
       >
         <ScrollIndicator />

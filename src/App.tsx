@@ -2,7 +2,6 @@ import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom';
 import { ScrollToTop } from './components/ScrollToTop';
 import { useEffect, lazy, Suspense } from 'react';
 import './App.css';
-import { OneTimeProvider } from './context/OneTimeContext';
 import DefaultLayout from './layouts/DefaultLayout';
 import Home from './pages/Home';
 import Projects from './pages/Projects';
@@ -69,9 +68,7 @@ function App() {
   return (
     <BrowserRouter>
       <div className='font-sans duration-300'>
-        <OneTimeProvider>
-          <AppRoutes />
-        </OneTimeProvider>
+        <AppRoutes />
       </div>
     </BrowserRouter>
   );

@@ -3,6 +3,8 @@ import { useState, useEffect, useMemo } from 'react';
 // import { Button } from './Button';
 // import { ArrowRight } from 'lucide-react';
 import { projectsData } from '@/data/projectsData';
+import { motion } from 'framer-motion';
+import { fadeUp } from '@/motion';
 
 const Portfolio = () => {
   const featuredProjects = useMemo(() => {
@@ -25,7 +27,10 @@ const Portfolio = () => {
     <section className='bg-black wrapper-content'>
       <div className='content'>
         <div className='flex justify-between w-full'>
-          <h2 className='mr-auto text-white title'>Featured Projects</h2>
+          <motion.h2 {...fadeUp(0, false)} className='mr-auto text-white title'>
+            Featured Projects
+          </motion.h2>
+
           {/* <Button
             size='sm'
             variant='outline'

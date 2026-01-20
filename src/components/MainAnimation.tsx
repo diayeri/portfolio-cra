@@ -1,3 +1,4 @@
+import { useState, useEffect } from 'react';
 import styles from './MainAnimation.module.css';
 
 const elements = [
@@ -170,21 +171,33 @@ const elements = [
   { className: 'shirts', count: 1 },
   { className: 'bg', count: 3 },
 ];
-export default function MainAnimation(props: { isFirstVisit: boolean }) {
-  const { isFirstVisit } = props;
+export default function MainAnimation(props: { showStatic: boolean }) {
+  const { showStatic } = props;
+
+  const classes = (className: string) =>
+    className
+      .split(' ')
+      .map((c) => styles[c])
+      .join(' ');
+
+  const style = showStatic
+    ? {
+        animation: 'none',
+        backgroundColor: `var(--bgc-after)` as string,
+        transform: 'translateY(0) translateX(0) scale(1)',
+      }
+    : undefined;
 
   return (
     <section
-      className={`${styles.animation} ${isFirstVisit ? '' : styles['animation-done']}`}
+      className={`${styles.animation} ${showStatic ? styles['animation-done'] : ''}`}
     >
       {elements.map(({ className, count }, i) =>
         Array.from({ length: count }, (_, j) => (
           <div
             key={`${className}-${i}-${j}`}
-            className={className
-              .split(' ')
-              .map((c) => styles[c])
-              .join(' ')}
+            className={classes(className)}
+            style={style}
           />
         ))
       )}

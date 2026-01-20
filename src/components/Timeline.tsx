@@ -1,4 +1,6 @@
 import { timelineData } from '@/data/timelineData';
+import { motion } from 'framer-motion';
+import { fadeUp } from '@/motion';
 
 export default function Timeline() {
   return (
@@ -6,8 +8,10 @@ export default function Timeline() {
       <div className='flex content'>
         {/* Left */}
         <div className='w-1/2 pr-40'>
-          <h2 className='title'>Career History</h2>
-          <div className='flex flex-col gap-2 mt-8 text-sm text-gray-500 break-keep'>
+          <motion.h2 {...fadeUp(0, false)} className='title'>
+            Career History
+          </motion.h2>
+          <div className='flex flex-col gap-2 mt-10 text-sm text-gray-500 break-keep'>
             <p>
               UI 개발로 경력을 시작한 후, 디자인과 프론트엔드까지 영역을
               확장하며
@@ -15,9 +19,10 @@ export default function Timeline() {
               쌓아왔습니다.
             </p>
             <p>
-              디자인 시스템과 UI 구조를 고려한 마크업과 컴포넌트 구현으로
-              프로젝트 완성도를 높였으며, React와 TypeScript 환경에서 개발자 및
-              디자이너와 협업하며 원활한 소통을 이어왔습니다.
+              디자인 시스템과 구조를 고려한 UI 구현으로 프로젝트 완성도를
+              높이고, <br />
+              React와 TypeScript 환경에서 개발자 및 디자이너와 원활하게
+              협업합니다.
             </p>
             <p>앞으로의 프로젝트에서는 풀스택으로 역량을 키워가고 싶습니다.</p>
           </div>
