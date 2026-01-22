@@ -9,6 +9,7 @@ import Page404 from './pages/Page404';
 import { trackPageView } from './utils/analytics';
 import { getSiteTitle } from './utils/env';
 import { projectsData } from './data/projectsData';
+import MobileNotice from './components/MobileNotice';
 
 // 지연 로딩되는 컴포넌트들
 const ProjectDetail = lazy(() => import('./components/ProjectDetail'));
@@ -70,6 +71,7 @@ function App() {
       <div className='font-sans duration-300'>
         <AppRoutes />
       </div>
+      <MobileNotice />
     </BrowserRouter>
   );
 }
