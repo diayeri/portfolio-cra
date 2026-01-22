@@ -1,9 +1,11 @@
 import React from 'react';
 import { Link, useParams, useNavigate } from 'react-router-dom';
-import AnimatedElement from './AnimatedElement';
+import AnimatedElement from '../components/AnimatedElement';
 import type { ProjectsData } from '@/data/projectsData';
 import Page404 from '@/pages/Page404';
 import { ChevronRight, ChevronLeft } from 'lucide-react';
+import ProjectsDetailSection from '@/components/ProjectDetailSection';
+import { projectSections } from '@/data/projectSections';
 
 interface ProjectInfoItemProps {
   label: string;
@@ -36,7 +38,7 @@ const ProjectDetail: React.FC<ProjectDetailProps> = ({ projects }) => {
   const { id } = useParams<{ id: string }>();
   const navigate = useNavigate();
 
-  const projectId = id; // URL 파라미터에서 현재 프로젝트 ID를 찾음
+  const projectId = id?.toLowerCase() ?? ''; // URL 파라미터에서 현재 프로젝트 ID를 찾음
   const project = projects.find((p) => p.id === projectId);
 
   if (!project) {
@@ -78,7 +80,7 @@ const ProjectDetail: React.FC<ProjectDetailProps> = ({ projects }) => {
             <h1 className='mb-6 text-3xl font-bold md:text-4xl lg:text-6xl'>
               {project.title}
             </h1>
-            <p className='mb-6 text-base text-gray-700'>
+            <p className='mb-6 text-base text-gray-700 whitespace-pre-line'>
               {project.description}
             </p>
             <div className='flex flex-wrap gap-2'>
@@ -141,16 +143,9 @@ const ProjectDetail: React.FC<ProjectDetailProps> = ({ projects }) => {
           </div>
         </div>
       </AnimatedElement>
-
       {/* 프로젝트 콘텐츠 */}
       {/* 상세 정보 */}
-      <div className='text-base text-gray-700'>
-        <p className=''>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla
-          facilisi. Maecenas non tortor felis, vitae condimentum libero. Integer
-          auctor tincidunt magna, sit amet eleifend nisl mattis id.
-        </p>
-      </div>
+      <ProjectsDetailSection sections={projectSections[projectId] || []} />
 
       {/* 이전/다음 프로젝트 내비게이션 */}
       <div className='flex items-center justify-between pt-8 mt-20 border-t border-gray-200'>

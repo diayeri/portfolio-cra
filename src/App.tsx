@@ -12,7 +12,7 @@ import { projectsData } from './data/projectsData';
 import MobileNotice from './components/MobileNotice';
 
 // 지연 로딩되는 컴포넌트들
-const ProjectDetail = lazy(() => import('./components/ProjectDetail'));
+const ProjectDetail = lazy(() => import('./pages/ProjectDetail'));
 
 // 로딩 Fallback 컴포넌트
 const LoadingFallback = () => (
